@@ -2,7 +2,7 @@
   <div>
     <div>{{ userData?.nama }}</div>
   </div>
-  <div class="p-8 bg-gray-50 min-h-screen">
+  <div class="p-8  min-h-screen">
     <!-- Cards Section -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
       <!-- Card 1: Pendapatan Minggu Ini -->

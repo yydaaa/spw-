@@ -50,6 +50,10 @@ const links = [
       to: "/dashboard/guru"
     },
 
+    {
+      label:"Absen",
+      to: "/dashboard/absen"
+    },
 
     {
       label:"Jadwal",
@@ -58,9 +62,10 @@ const links = [
     },
 
     {
-      label:"Pket Guru",
-      to: "/dashboard/jadwalpiketguru"
+      label:"Piket Siswa",
+      to: "/dashboard/jadwalpiketsiswa"
     },
+
   ],
   [
     {
