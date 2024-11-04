@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-auto min-h-screen justify-center items-center">
+  <div class="flex flex-col min-h-full justify-center items-center">
     <div class="w-fit relative border rounded-2xl">
       <NuxtLink class="absolute top-3 left-3" to="/dashboard/siswa">⬅️</NuxtLink>
       <UForm class="p-10 space-y-4 flex flex-col" :validate="validate" :state="state" @submit="addSiswa">
@@ -20,6 +20,11 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'dashboard',
+  middleware: 'auth'
+})
+
 const supabase = useSupabaseClient()
 
 const state = reactive({
@@ -38,7 +43,6 @@ const { execute: addSiswa, status, error } = await useAsyncData('addSiswa', asyn
   const { error } = await supabase.from('siswa').insert([{
     nama: state.nama,
     kelas: Number(state.kelas),
-    token: Math.random().toString(36).substring(2).slice(0, 6)
   }])
   if (error) throw new Error('Gagal menambahkan data')
   navigateTo('/dashboard/siswa')
